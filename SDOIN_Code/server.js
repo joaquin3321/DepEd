@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config();
-const collection = require("./Main/db_config.js");
+const collection = require("./db_config.js");
 const passport = require("passport");
 const expressLayouts = require("express-ejs-layouts");
 const flash = require("connect-flash");
