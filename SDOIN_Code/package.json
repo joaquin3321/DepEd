@@ -1,10 +1,10 @@
 {
   "name": "SDOIN SYSTEM",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "server.js",
 "scripts": {
-            "start": "node Main/server.js",
-            "dev": "nodemon Main/server.js"
+            "start": "node server.js",
+            "dev": "nodemon server.js"
          },
   "author": "",
   "license": "ISC",
