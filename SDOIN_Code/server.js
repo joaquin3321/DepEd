@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config();
-const collection = require("./db_config");
+const collection = require("./Main/db_config.js");
 const passport = require("passport");
 const expressLayouts = require("express-ejs-layouts");
 const flash = require("connect-flash");
@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const socketIO = require('socket.io');
 const bodyParser = require('body-parser');
 const path = require('path');
-const { forwardAuthenticated } = require("../config/auth");
+const { forwardAuthenticated } = require("./config/auth.js");
 
 const app = express();
 const server = require("http").createServer(app);
@@ -25,7 +25,7 @@ io.on("connection", (socket) => {
 });
 
 // Passport Config
-require("../config/passport")(passport);
+require("./config/passport.js")(passport);
 
 // Express body parser
 app.use(express.urlencoded({ extended: true }));
@@ -58,9 +58,9 @@ app.use(function (req, res, next) {
 app.use("/public", express.static("public"));
 
 // Routes
-app.use("/", require("../routes/index.js")(io));
-app.use("/users", require("../routes/users.js")(io));
-app.use("/action", require("../routes/action.js")(io));
+app.use("/", require("./routes/index.js")(io));
+app.use("/users", require("./routes/users.js")(io));
+app.use("/action", require("./routes/action.js")(io));
 
 
 //Route for action method
