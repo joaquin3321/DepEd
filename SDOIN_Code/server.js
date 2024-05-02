@@ -57,6 +57,8 @@ app.use(function (req, res, next) {
 //Universal Access to any File Folder
 app.use("/public", express.static("public"));
 
+app.get("/login", forwardAuthenticated, (req, res) => res.render("login"));
+
 // Routes
 app.use("/", require("./routes/index.js")(io));
 app.use("/users", require("./routes/users.js")(io));
