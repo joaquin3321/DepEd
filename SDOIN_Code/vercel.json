@@ -6,13 +6,13 @@
           "use": "vercel-sapper"
       },
       {
-          "src": "./server.js",
+          "src": "./routes/index.js",
           "use": "@vercel/node"
       }
   ],
     "routes": [
       {
-        "src": "./server.js",
+        "src": "./routes/index.js",
         "dest": "/"
       }
     ]
