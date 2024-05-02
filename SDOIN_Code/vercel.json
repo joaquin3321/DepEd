@@ -1,8 +1,9 @@
 {
   "version": 2,
+
   "routes": [
     {
-      "src": "/SDOIN_Code",
+      "src": "/(.*)",
       "dest": "./server.js"
     }
   ]
